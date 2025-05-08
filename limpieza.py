@@ -14,3 +14,11 @@ print(data.duplicated().sum())
 print(data.nunique())
 # Eliminar columnas innecesarias
 data.drop(columns=['Unnamed: 0', 'Unnamed: 0.1'], inplace=True)
+
+# Descripcion de los datos
+print(data.describe())
+# Verificar los tipos de datos de cada columna
+print(data.dtypes)
+
+# Cambiar el tipo de datos de la columna 'date' a datetime
+data['date'] = pd.to_datetime(data['date'], format='%Y-%m-%d %H:%M:%S')
